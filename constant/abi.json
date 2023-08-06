@@ -1,0 +1,59 @@
+[
+  {
+    "type": "event",
+    "anonymous": false,
+    "name": "TransactionStatus",
+    "inputs": [
+      { "type": "bool", "name": "callStatus", "indexed": false },
+      { "type": "address", "name": "sender", "indexed": false },
+      { "type": "address", "name": "reciever", "indexed": false }
+    ]
+  },
+  {
+    "type": "event",
+    "anonymous": false,
+    "name": "emailStored",
+    "inputs": [
+      { "type": "string", "name": "email", "indexed": false },
+      { "type": "address", "name": "addr", "indexed": false }
+    ]
+  },
+  {
+    "type": "function",
+    "name": "getAddr",
+    "constant": true,
+    "stateMutability": "view",
+    "payable": false,
+    "inputs": [{ "type": "string", "name": "_email" }],
+    "outputs": [{ "type": "address" }]
+  },
+  {
+    "type": "function",
+    "name": "payToAddr",
+    "constant": false,
+    "stateMutability": "payable",
+    "payable": true,
+    "inputs": [{ "type": "address", "name": "_addr" }],
+    "outputs": []
+  },
+  {
+    "type": "function",
+    "name": "s_email_to_addr",
+    "constant": true,
+    "stateMutability": "view",
+    "payable": false,
+    "inputs": [{ "type": "string" }],
+    "outputs": [{ "type": "address" }]
+  },
+  {
+    "type": "function",
+    "name": "storeEmailtoAddr",
+    "constant": false,
+    "payable": false,
+    "inputs": [
+      { "type": "string", "name": "_email" },
+      { "type": "address", "name": "_addr" }
+    ],
+    "outputs": []
+  }
+]
